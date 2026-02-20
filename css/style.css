@@ -16,10 +16,12 @@
   --ff-gold-pale: #f5ecd4;
   --ff-white: #ffffff;
   --ff-offwhite: #f8f7f4;
+  --ff-gray-50: #f9fafb;
   --ff-gray-100: #f3f4f6;
   --ff-gray-200: #e5e7eb;
   --ff-gray-400: #9ca3af;
   --ff-gray-600: #4b5563;
+  --ff-gray-700: #374151;
   --ff-gray-800: #1f2937;
   --ff-red: #b91c1c;
 
@@ -39,6 +41,7 @@
 
   /* Radius */
   --ff-radius: 6px;
+  --ff-radius-sm: 4px;
   --ff-radius-lg: 12px;
 }
 
@@ -603,18 +606,19 @@ h4 { font-size: 1.15rem; font-weight: 600; }
   padding: 0;
 }
 .ff-law-box li {
-  padding: 12px 0;
+  padding: 12px 0 12px 28px;
   border-bottom: 1px solid var(--ff-gray-100);
-  display: flex;
-  gap: 12px;
   font-size: .95rem;
+  position: relative;
 }
 .ff-law-box li:last-child { border-bottom: none; }
 .ff-law-box li::before {
   content: '\2713';
   color: var(--ff-gold);
   font-weight: 700;
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  top: 12px;
 }
 
 /* --- Nearby Areas --- */
