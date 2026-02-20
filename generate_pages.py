@@ -109,6 +109,17 @@ TEMPLATE = """<!DOCTYPE html>
   </div>
 </div></section>
 
+<section class="ff-section ff-section--gray"><div class="ff-container--narrow">
+  <div class="ff-nearby">
+    <div class="ff-nearby__title">Also Serving Nearby Areas</div>
+    <ul class="ff-nearby__list">{nearby_links}</ul>
+  </div>
+  <div class="ff-directions">
+    <div class="ff-directions__title">&#128205; Directions to Our Office</div>
+    <p>{directions}</p>
+  </div>
+</div></section>
+
 <section id="contact" class="ff-cta"><div class="ff-container"><h2>Injured While Walking in {city}?</h2><p>Don't let the insurance company undervalue your claim. Contact Ferguson &amp; Ferguson today for a free consultation.</p><a href="tel:+12563507200" class="ff-btn ff-btn--gold ff-btn--lg">Call (256) 350-7200</a><a href="mailto:info@fergusonandferguson.com" class="ff-btn ff-btn--white ff-btn--lg">Email Us</a></div></section>
 
 <footer class="ff-footer"><div class="ff-container"><div class="ff-footer__grid">
@@ -151,7 +162,9 @@ cities = [
          faq5_q='How does Alabama\'s contributory negligence law affect my case?',
          faq5_a='Alabama follows <strong>contributory negligence</strong>, meaning if the insurance company proves you were even 1% at fault, your entire claim could be denied. They\'ll argue you shouldn\'t have been walking on a road without a sidewalk. Ferguson &amp; Ferguson defeats these arguments by proving the driver\'s negligence was the sole cause.',
          faq6_q='Does Ferguson &amp; Ferguson charge upfront fees?',
-         faq6_a='No. We work on a <strong>contingency fee basis</strong> &mdash; you pay nothing unless we win your case. Your consultation is free, and there are no hourly charges or upfront costs.'),
+         faq6_a='No. We work on a <strong>contingency fee basis</strong> &mdash; you pay nothing unless we win your case. Your consultation is free, and there are no hourly charges or upfront costs.',
+         nearby_links='<li><a href="cullman.html">Cullman</a></li><li><a href="holly-pond.html">Holly Pond</a></li><li><a href="fairview.html">Fairview</a></li><li><a href="south-vinemont.html">South Vinemont</a></li>',
+         directions='From <strong>Berlin Town Hall</strong>, head west on County Road 1485 toward Cullman (approximately 5 miles). Take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 40 minutes.'),
 
     dict(file='colony', city='Colony', meta_desc='County road pedestrian injuries and small-town walking accidents.',
          image='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=640&h=400&fit=crop',
@@ -182,7 +195,9 @@ cities = [
          faq5_q='What injuries do pedestrians in Colony typically suffer?',
          faq5_a='Colony\'s pedestrian accidents often involve vehicles traveling at speed on county roads. Common injuries include broken bones, head trauma, spinal injuries, internal bleeding, and road rash. Even lower-speed impacts between vehicles and pedestrians can cause severe, life-altering injuries.',
          faq6_q='Does it cost anything to consult with Ferguson &amp; Ferguson about my accident?',
-         faq6_a='No. Your consultation is completely free, and we work on a <strong>contingency fee basis</strong>. You pay nothing unless we win your case. There are no upfront costs or hourly fees.'),
+         faq6_a='No. Your consultation is completely free, and we work on a <strong>contingency fee basis</strong>. You pay nothing unless we win your case. There are no upfront costs or hourly fees.',
+         nearby_links='<li><a href="holly-pond.html">Holly Pond</a></li><li><a href="garden-city.html">Garden City</a></li><li><a href="good-hope.html">Good Hope</a></li><li><a href="cullman.html">Cullman</a></li>',
+         directions='From <strong>Colony</strong>, head northwest on County Road 222 toward Cullman (approximately 12 miles). Take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 50 minutes.'),
 
     dict(file='dodge-city', city='Dodge City', meta_desc='Pedestrian injuries in growing neighborhoods and construction zones.',
          image='https://images.unsplash.com/photo-1494783367193-149034c05e8f?w=640&h=400&fit=crop',
@@ -213,38 +228,42 @@ cities = [
          faq5_q='What compensation is available for pedestrian accident victims in Dodge City?',
          faq5_a='You may recover medical expenses (current and future), lost wages, pain and suffering, emotional distress, permanent disability, and loss of quality of life. Cases involving construction vehicles or developer negligence may involve multiple liable parties, potentially increasing available compensation.',
          faq6_q='How much does it cost to hire Ferguson &amp; Ferguson?',
-         faq6_a='Nothing upfront. We work on a <strong>contingency fee basis</strong> &mdash; our fee comes from a percentage of the compensation we win for you. If we don\'t win, you don\'t pay. Consultations are always free.'),
+         faq6_a='Nothing upfront. We work on a <strong>contingency fee basis</strong> &mdash; our fee comes from a percentage of the compensation we win for you. If we don\'t win, you don\'t pay. Consultations are always free.',
+         nearby_links='<li><a href="cullman.html">Cullman</a></li><li><a href="good-hope.html">Good Hope</a></li><li><a href="west-point.html">West Point</a></li><li><a href="garden-city.html">Garden City</a></li>',
+         directions='From <strong>Dodge City</strong>, head north toward <strong>I-65 North</strong> (approximately 3 miles to the interstate). Follow I-65 North toward Decatur for about 28 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 35 minutes.'),
 
-    dict(file='fairview', city='Fairview', meta_desc='US-278 truck traffic pedestrian injuries and highway crossing accidents.',
+    dict(file='fairview', city='Fairview', meta_desc='Highway 69 commuter traffic pedestrian injuries and rural highway crossing accidents.',
          image='https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=640&h=400&fit=crop',
-         hero_lead='Located along US-278, Fairview sees heavy truck and commuter traffic roaring past homes and businesses. Pedestrians crossing the highway or walking along its shoulders face life-threatening danger every day.',
+         hero_lead='Located along Highway 69, Fairview sees heavy commuter and commercial traffic roaring between Cullman and Arab. Pedestrians crossing the highway or walking along its shoulders face life-threatening danger every day.',
          intro_h2='Living Alongside a Dangerous Highway Corridor',
-         intro_p1='Fairview straddles US-278, a busy east-west highway that carries heavy truck traffic, commercial vehicles, and daily commuters through this 800-person community. Homes, businesses, and churches line both sides of the highway, forcing residents to cross or walk alongside fast-moving traffic for basic daily tasks.',
-         intro_p2='The combination of 18-wheelers, commercial vehicles, and commuters traveling at highway speed creates a particularly dangerous environment. Large trucks have massive blind spots and require far greater stopping distances. When a truck driver fails to see a pedestrian crossing US-278, the results are catastrophic.',
-         intro_p3='Ferguson &amp; Ferguson represents pedestrians injured along the US-278 corridor through Fairview. We know how to investigate truck and commercial vehicle accidents and hold negligent drivers and trucking companies accountable.',
-         c1_title='Heavy Truck Traffic', c1_text='US-278 carries a constant stream of 18-wheelers and commercial vehicles. Their massive blind spots and long stopping distances make them especially deadly to pedestrians.',
-         c2_title='Dangerous Highway Crossings', c2_text='Fairview residents must cross US-278 to reach businesses, churches, and neighbors on the opposite side. Without crosswalks or signals, every crossing is a gamble.',
-         c3_title='Excessive Speed', c3_text='Drivers and truckers maintaining highway speed through Fairview can\'t stop in time when pedestrians appear at driveways, intersections, or road shoulders.',
+         intro_p1='Fairview sits along Alabama Highway 69, a busy corridor that carries commuter traffic, commercial vehicles, and daily travelers between Cullman and Arab through this 800-person community. Homes, businesses, and churches line both sides of the highway, forcing residents to cross or walk alongside fast-moving traffic for basic daily tasks.',
+         intro_p2='The combination of commercial vehicles, commuters traveling at highway speed, and farm equipment creates a particularly dangerous environment. Large trucks have massive blind spots and require far greater stopping distances. When a driver fails to see a pedestrian crossing Highway 69, the results are catastrophic.',
+         intro_p3='Ferguson &amp; Ferguson represents pedestrians injured along the Highway 69 corridor through Fairview. We know how to investigate commercial vehicle accidents and hold negligent drivers and trucking companies accountable.',
+         c1_title='Heavy Commercial Traffic', c1_text='Highway 69 carries a steady stream of commercial vehicles and commuters between Cullman and Arab. Their speed and volume make the corridor especially dangerous for pedestrians.',
+         c2_title='Dangerous Highway Crossings', c2_text='Fairview residents must cross Highway 69 to reach businesses, churches, and neighbors on the opposite side. Without crosswalks or signals, every crossing is a gamble.',
+         c3_title='Excessive Speed', c3_text='Drivers maintaining highway speed through Fairview can\'t stop in time when pedestrians appear at driveways, intersections, or road shoulders.',
          c4_title='Commercial Vehicle Blind Spots', c4_text='Large trucks have blind spots on all four sides. Pedestrians visible to a car driver may be completely invisible to a trucker making a right turn.',
-         c5_title='Limited Visibility at Curves', c5_text='Sections of US-278 through Fairview feature curves that hide pedestrians from approaching vehicles until the last moment.',
-         c6_title='No Pedestrian Signals', c6_text='Fairview has no pedestrian crossing signals along the US-278 corridor. Residents must judge gaps in highway traffic themselves when crossing.',
-         callout_bold='Truck accidents require specialized investigation.', callout_text='Commercial vehicles carry electronic logs, dashcam footage, and maintenance records that can prove negligence. Ferguson &amp; Ferguson knows how to obtain this evidence before trucking companies destroy it.',
-         step1='Call 911 immediately. US-278 accidents often involve heavy vehicles and severe injuries. Ensure law enforcement documents any commercial vehicle information.',
-         step2='Go to Cullman Regional Medical Center immediately. Truck-pedestrian impacts cause catastrophic injuries requiring urgent evaluation.',
-         step3='Photograph everything: the truck, company markings, license plates, your injuries, road conditions, and the lack of crosswalks or pedestrian signals.',
-         why1_title='Truck Accident Expertise', why1_text='We know how to investigate commercial vehicle accidents, obtain electronic logs and dashcam footage, and hold trucking companies accountable.',
-         faq1_q='I was hit by an 18-wheeler while crossing US-278 in Fairview. What should I do?',
-         faq1_a='Call 911 immediately and seek emergency medical care. Truck-pedestrian impacts cause catastrophic injuries. Document the truck\'s company markings, license plate, and any DOT numbers. <strong>Do not speak to the trucking company\'s insurance adjuster</strong> &mdash; contact Ferguson &amp; Ferguson first. We can issue evidence preservation letters to prevent the trucking company from destroying electronic logs and dashcam footage.',
+         c5_title='Limited Visibility at Curves', c5_text='Sections of Highway 69 through Fairview feature curves that hide pedestrians from approaching vehicles until the last moment.',
+         c6_title='No Pedestrian Signals', c6_text='Fairview has no pedestrian crossing signals along the Highway 69 corridor. Residents must judge gaps in traffic themselves when crossing.',
+         callout_bold='Commercial vehicle accidents require specialized investigation.', callout_text='Commercial vehicles carry electronic logs, dashcam footage, and maintenance records that can prove negligence. Ferguson &amp; Ferguson knows how to obtain this evidence before companies destroy it.',
+         step1='Call 911 immediately. Highway 69 accidents often involve commercial vehicles and severe injuries. Ensure law enforcement documents any commercial vehicle information.',
+         step2='Go to Cullman Regional Medical Center immediately. Vehicle-pedestrian impacts cause catastrophic injuries requiring urgent evaluation.',
+         step3='Photograph everything: the vehicle, company markings, license plates, your injuries, road conditions, and the lack of crosswalks or pedestrian signals.',
+         why1_title='Highway Accident Expertise', why1_text='We know how to investigate commercial vehicle accidents, obtain electronic logs and dashcam footage, and hold negligent drivers and companies accountable.',
+         faq1_q='I was hit by a commercial vehicle while crossing Highway 69 in Fairview. What should I do?',
+         faq1_a='Call 911 immediately and seek emergency medical care. Vehicle-pedestrian impacts cause catastrophic injuries. Document the vehicle\'s company markings, license plate, and any DOT numbers. <strong>Do not speak to the company\'s insurance adjuster</strong> &mdash; contact Ferguson &amp; Ferguson first. We can issue evidence preservation letters to prevent the company from destroying electronic logs and dashcam footage.',
          faq2_q='Are trucking companies liable when their drivers hit pedestrians in Fairview?',
          faq2_a='Yes. Under federal law and Alabama liability rules, trucking companies are responsible for the actions of their drivers. They\'re also required to maintain vehicles, enforce hours-of-service rules, and ensure driver training. If any of these obligations were violated, the company may owe you additional compensation beyond what the driver\'s insurance covers.',
          faq3_q='Why are truck accidents different from regular car-pedestrian accidents?',
          faq3_a='Truck accidents involve larger vehicles traveling at higher speeds with greater mass, causing far more severe injuries. They also involve complex liability &mdash; the driver, the trucking company, the vehicle manufacturer, and even cargo loaders may share fault. Electronic evidence (logs, GPS, dashcams) must be preserved quickly before it\'s overwritten.',
-         faq4_q='How dangerous is US-278 through Fairview for pedestrians?',
-         faq4_a='Extremely dangerous. US-278 carries a constant stream of 18-wheelers and commercial vehicles at highway speed through a community of 800 people. There are no pedestrian crosswalks, no traffic signals, and limited visibility at curves. Large trucks have massive blind spots that make pedestrians invisible to drivers making turns.',
+         faq4_q='How dangerous is Highway 69 through Fairview for pedestrians?',
+         faq4_a='Extremely dangerous. Highway 69 carries a steady stream of commercial vehicles and commuters at highway speed through a community of 800 people. There are no pedestrian crosswalks, no traffic signals, and limited visibility at curves. Large trucks have massive blind spots that make pedestrians invisible to drivers making turns.',
          faq5_q='What types of compensation can truck accident victims recover?',
          faq5_a='Truck-pedestrian accidents typically involve severe injuries and high compensation values. You may recover medical expenses, lost wages, pain and suffering, permanent disability, loss of earning capacity, and in some cases punitive damages if the trucker or company acted recklessly. Multiple liable parties can increase the total compensation available.',
          faq6_q='Does Ferguson &amp; Ferguson handle truck accident cases on a contingency basis?',
-         faq6_a='Yes. Like all our pedestrian accident cases, truck accident cases are handled on a <strong>contingency fee basis</strong>. You pay nothing unless we win. Given the complexity of trucking cases, having experienced attorneys at no upfront cost is critical.'),
+         faq6_a='Yes. Like all our pedestrian accident cases, truck accident cases are handled on a <strong>contingency fee basis</strong>. You pay nothing unless we win. Given the complexity of trucking cases, having experienced attorneys at no upfront cost is critical.',
+         nearby_links='<li><a href="baileyton.html">Baileyton</a></li><li><a href="holly-pond.html">Holly Pond</a></li><li><a href="berlin.html">Berlin</a></li><li><a href="cullman.html">Cullman</a></li>',
+         directions='From <strong>Fairview</strong>, head west on <strong>Alabama Highway 69</strong> toward Cullman (approximately 15 miles). In Cullman, take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 50 minutes.'),
 
     dict(file='garden-city', city='Garden City', meta_desc='School zone pedestrian injuries and residential area accidents.',
          image='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=640&h=400&fit=crop',
@@ -275,7 +294,9 @@ cities = [
          faq5_q='What compensation is available for child pedestrian accident victims?',
          faq5_a='Compensation may include medical bills (current and future), rehabilitation costs, pain and suffering, emotional trauma, loss of childhood activities, and in severe cases, permanent disability. Parents may also recover damages for their own emotional distress and the cost of caring for an injured child.',
          faq6_q='Does Ferguson &amp; Ferguson offer free consultations for Garden City accidents?',
-         faq6_a='Yes. Your consultation is completely free, and we work on a <strong>contingency fee basis</strong>. You pay nothing unless we recover compensation for you. This is especially important for families dealing with unexpected medical bills after a child\'s pedestrian accident.'),
+         faq6_a='Yes. Your consultation is completely free, and we work on a <strong>contingency fee basis</strong>. You pay nothing unless we recover compensation for you. This is especially important for families dealing with unexpected medical bills after a child\'s pedestrian accident.',
+         nearby_links='<li><a href="hanceville.html">Hanceville</a></li><li><a href="good-hope.html">Good Hope</a></li><li><a href="colony.html">Colony</a></li><li><a href="cullman.html">Cullman</a></li>',
+         directions='From <strong>Garden City</strong>, head north on <strong>US-31</strong> for approximately 13 miles to Cullman. In Cullman, take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 50 minutes.'),
 
     dict(file='holly-pond', city='Holly Pond', meta_desc='Highway 31 pedestrian injuries and school zone accidents.',
          image='https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=640&h=400&fit=crop',
@@ -306,7 +327,9 @@ cities = [
          faq5_q='How long do I have to file a claim after a pedestrian accident in Holly Pond?',
          faq5_a='Alabama\'s statute of limitations is <strong>2 years</strong> from the date of the accident. However, evidence deteriorates quickly &mdash; skid marks fade, surveillance footage gets overwritten, and witnesses move away. Contact an attorney as soon as possible to preserve the strongest case.',
          faq6_q='Does Ferguson &amp; Ferguson charge anything for a consultation?',
-         faq6_a='No. Consultations are always free. We work on a <strong>contingency fee basis</strong>, meaning you pay nothing unless we win your case. There are no upfront costs, no hourly fees, and no financial risk to you.'),
+         faq6_a='No. Consultations are always free. We work on a <strong>contingency fee basis</strong>, meaning you pay nothing unless we win your case. There are no upfront costs, no hourly fees, and no financial risk to you.',
+         nearby_links='<li><a href="berlin.html">Berlin</a></li><li><a href="south-vinemont.html">South Vinemont</a></li><li><a href="baileyton.html">Baileyton</a></li><li><a href="colony.html">Colony</a></li>',
+         directions='From <strong>Holly Pond</strong>, head west on <strong>US-278</strong> toward Cullman (approximately 12 miles). In Cullman, take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 50 minutes.'),
 
     dict(file='south-vinemont', city='South Vinemont', meta_desc='US-31 corridor pedestrian injuries and nighttime walking accidents.',
          image='https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=640&h=400&fit=crop',
@@ -337,7 +360,9 @@ cities = [
          faq5_q='What compensation can I recover after being hit while walking at night?',
          faq5_a='You may recover medical expenses, lost wages, pain and suffering, emotional distress, permanent disability, and loss of quality of life. Nighttime highway-speed impacts tend to cause severe injuries with long recovery periods, which increases the total value of your claim.',
          faq6_q='Does Ferguson &amp; Ferguson offer free consultations for South Vinemont accident victims?',
-         faq6_a='Yes. Your consultation is completely free, and we handle all pedestrian accident cases on a <strong>contingency fee basis</strong>. You pay nothing unless we recover compensation for you.'),
+         faq6_a='Yes. Your consultation is completely free, and we handle all pedestrian accident cases on a <strong>contingency fee basis</strong>. You pay nothing unless we recover compensation for you.',
+         nearby_links='<li><a href="cullman.html">Cullman</a></li><li><a href="baileyton.html">Baileyton</a></li><li><a href="holly-pond.html">Holly Pond</a></li><li><a href="west-point.html">West Point</a></li>',
+         directions='From <strong>South Vinemont</strong>, head north on <strong>US-31</strong> into Morgan County and continue toward Decatur (approximately 20 miles). Follow US-31 through Hartselle. In Decatur, turn right onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 25 minutes.'),
 
     dict(file='west-point', city='West Point', meta_desc='County road intersection pedestrian injuries and rural crossing accidents.',
          image='https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=640&h=400&fit=crop',
@@ -368,7 +393,9 @@ cities = [
          faq5_q='What should I do after being struck at a West Point intersection?',
          faq5_a='Call 911 immediately. The Cullman County Sheriff will respond. Document the intersection with photos &mdash; capture sight lines, stop signs, vegetation blocking views, and any farm equipment. Seek medical attention at Cullman Regional Medical Center. Do not give the insurance company a recorded statement before speaking with an attorney.',
          faq6_q='How much does it cost to hire Ferguson &amp; Ferguson for my West Point accident?',
-         faq6_a='Nothing upfront. We work on a <strong>contingency fee basis</strong> &mdash; you pay nothing unless we win compensation for you. Consultations are always free.'),
+         faq6_a='Nothing upfront. We work on a <strong>contingency fee basis</strong> &mdash; you pay nothing unless we win compensation for you. Consultations are always free.',
+         nearby_links='<li><a href="dodge-city.html">Dodge City</a></li><li><a href="cullman.html">Cullman</a></li><li><a href="south-vinemont.html">South Vinemont</a></li><li><a href="good-hope.html">Good Hope</a></li>',
+         directions='From <strong>West Point</strong>, head east toward Cullman on county roads (approximately 10 miles). In Cullman, take <strong>I-65 North</strong> toward Decatur for about 30 miles. Take the <strong>US-31 exit</strong> into Decatur. Turn left onto <strong>Oak Street NE</strong> &mdash; our office is at <strong>211 Oak Street NE, Decatur, AL 35601</strong>. Total drive time: approximately 45 minutes.'),
 ]
 
 for c in cities:
