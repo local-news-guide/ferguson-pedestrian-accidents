@@ -195,82 +195,6 @@ h4 { font-size: 1.15rem; font-weight: 600; }
   color: var(--ff-navy) !important;
 }
 
-/* Nav dropdown (Service Areas) */
-.ff-nav__dropdown {
-  position: relative;
-}
-.ff-nav__dropdown-toggle {
-  color: var(--ff-gray-200);
-  font-size: .92rem;
-  font-weight: 500;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-family: inherit;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: color .2s;
-  padding: 0;
-}
-.ff-nav__dropdown-toggle:hover { color: var(--ff-gold); }
-.ff-nav__dropdown-toggle::after {
-  content: '';
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid currentColor;
-  transition: transform .25s;
-}
-.ff-nav__dropdown.open .ff-nav__dropdown-toggle::after {
-  transform: rotate(180deg);
-}
-
-.ff-nav__dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--ff-navy);
-  border: 1px solid var(--ff-navy-light);
-  border-radius: var(--ff-radius);
-  box-shadow: var(--ff-shadow-lg);
-  min-width: 260px;
-  padding: 8px 0;
-  z-index: 200;
-}
-.ff-nav__dropdown-menu::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid var(--ff-navy-light);
-}
-.ff-nav__dropdown.open .ff-nav__dropdown-menu {
-  display: block;
-}
-.ff-nav__dropdown-menu a {
-  display: block;
-  padding: 9px 20px;
-  color: var(--ff-gray-200);
-  font-size: .88rem;
-  font-weight: 500;
-  transition: background .15s, color .15s;
-  white-space: nowrap;
-}
-.ff-nav__dropdown-menu a:hover {
-  background: var(--ff-navy-light);
-  color: var(--ff-gold);
-}
-.ff-nav__dropdown-menu .ff-nav__dropdown-divider {
-  height: 1px;
-  background: var(--ff-navy-light);
-  margin: 6px 0;
-}
-
 /* Mobile nav toggle */
 .ff-nav-toggle {
   display: none;
@@ -286,15 +210,6 @@ h4 { font-size: 1.15rem; font-weight: 600; }
   background: var(--ff-white);
   margin: 5px 0;
   transition: .3s;
-}
-.ff-nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.ff-nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.ff-nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* --- Hero --- */
@@ -1027,31 +942,8 @@ h4 { font-size: 1.15rem; font-weight: 600; }
     right: 0;
     background: var(--ff-navy);
     padding: 20px;
-    gap: 0;
+    gap: 16px;
     box-shadow: var(--ff-shadow-lg);
-    border-top: 1px solid var(--ff-navy-light);
-  }
-  .ff-nav.active > a,
-  .ff-nav.active > .ff-nav__dropdown {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,.06);
-  }
-  .ff-nav__dropdown-menu {
-    position: static;
-    transform: none;
-    border: none;
-    box-shadow: none;
-    min-width: 0;
-    padding: 4px 0 8px 16px;
-    background: transparent;
-  }
-  .ff-nav__dropdown-menu::before { display: none; }
-  .ff-nav__dropdown-menu a {
-    padding: 7px 0;
-    font-size: .85rem;
-  }
-  .ff-nav__dropdown-menu a:hover {
-    background: transparent;
   }
   .ff-trust__grid { grid-template-columns: 1fr 1fr; }
   .ff-trust__grid > div { border-left: none; padding-left: 0; padding-bottom: 12px; }
