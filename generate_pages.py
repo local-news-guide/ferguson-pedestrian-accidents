@@ -26,7 +26,20 @@ TEMPLATE = """<!DOCTYPE html>
   </div>
 </section>
 
-<section class="ff-section"><div class="ff-container"><div class="ff-two-col"><div><img src="{image}" alt="{city} Alabama" class="ff-two-col__img"></div><div>
+<!-- Table of Contents -->
+<div class="ff-toc">
+  <div class="ff-toc__title">On This Page</div>
+  <ul class="ff-toc__list">
+    <li><a href="#accidents">Pedestrian Accidents in {city}</a></li>
+    <li><a href="#causes">Common Causes</a></li>
+    <li><a href="#laws">Alabama Pedestrian Law</a></li>
+    <li><a href="#steps">What to Do After an Accident</a></li>
+    <li><a href="#about">Why Choose Ferguson &amp; Ferguson</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</div>
+
+<section id="accidents" class="ff-section"><div class="ff-container"><div class="ff-two-col"><div><img src="{image}" alt="{city} Alabama" class="ff-two-col__img"></div><div>
   <span class="ff-eyebrow">{city} Pedestrian Accidents</span>
   <h2 class="ff-mb-3">{intro_h2}</h2>
   <p class="ff-mb-3">{intro_p1}</p>
@@ -34,7 +47,7 @@ TEMPLATE = """<!DOCTYPE html>
   <p>{intro_p3}</p>
 </div></div></div></section>
 
-<section class="ff-section ff-section--gray"><div class="ff-container"><div class="ff-text-center ff-mb-5"><span class="ff-eyebrow">Common Causes</span><h2>Why Pedestrian Accidents Happen in {city}</h2></div>
+<section id="causes" class="ff-section ff-section--gray"><div class="ff-container"><div class="ff-text-center ff-mb-5"><span class="ff-eyebrow">Common Causes</span><h2>Why Pedestrian Accidents Happen in {city}</h2></div>
   <ul class="ff-icon-list ff-icon-list--2col">
     <li><div class="ff-icon-list__icon">1</div><div class="ff-icon-list__text"><h4>{c1_title}</h4><p>{c1_text}</p></div></li>
     <li><div class="ff-icon-list__icon">2</div><div class="ff-icon-list__text"><h4>{c2_title}</h4><p>{c2_text}</p></div></li>
@@ -45,7 +58,7 @@ TEMPLATE = """<!DOCTYPE html>
   </ul>
 </div></section>
 
-<section class="ff-section"><div class="ff-container--narrow">
+<section id="laws" class="ff-section"><div class="ff-container--narrow">
   <span class="ff-eyebrow">Alabama Pedestrian Law</span>
   <h2 class="ff-mb-4">Know Your Rights as a Pedestrian in Alabama</h2>
   <div class="ff-law-box"><h3>&#9878; Key Alabama Pedestrian Laws</h3><ul>
@@ -59,7 +72,7 @@ TEMPLATE = """<!DOCTYPE html>
   <div class="ff-callout"><p><strong>{callout_bold}</strong> {callout_text}</p></div>
 </div></section>
 
-<section class="ff-section ff-section--gray"><div class="ff-container--narrow">
+<section id="steps" class="ff-section ff-section--gray"><div class="ff-container--narrow">
   <span class="ff-eyebrow">After an Accident</span>
   <h2 class="ff-mb-4">What to Do After a Pedestrian Accident in {city}</h2>
   <ol class="ff-steps">
