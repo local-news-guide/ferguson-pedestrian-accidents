@@ -1950,6 +1950,169 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 
 
 /* ============================================================
+   WHY CHOOSE US — full-bleed background section
+   ============================================================ */
+
+.ff-why-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.ff-why-section__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ff-why-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(7,20,40,.94) 0%,
+    rgba(12,35,64,.90) 50%,
+    rgba(7,20,40,.94) 100%
+  );
+}
+.ff-why-section__content {
+  position: relative;
+  z-index: 2;
+}
+.ff-why-section h2 {
+  color: var(--ff-white);
+}
+.ff-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.ff-why-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--ff-radius-lg);
+  padding: 32px 28px;
+  transition: background .3s, border-color .3s, transform .3s;
+}
+.ff-why-card:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(193,154,62,.3);
+  transform: translateY(-4px);
+}
+.ff-why-card__number {
+  font-family: var(--ff-font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ff-gold);
+  opacity: .5;
+  margin-bottom: 12px;
+  letter-spacing: -.02em;
+}
+.ff-why-card h4 {
+  color: var(--ff-white);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.ff-why-card p {
+  color: var(--ff-gray-400);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   SERVICE AREA TAGS & COVERAGE LIST
+   ============================================================ */
+
+.ff-area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ff-area-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--ff-white);
+  border: 1px solid var(--ff-gray-200);
+  border-radius: var(--ff-radius-sm);
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--ff-navy);
+  transition: all .25s;
+}
+.ff-area-tag:hover {
+  background: var(--ff-gold);
+  border-color: var(--ff-gold);
+  color: var(--ff-navy-dark);
+}
+
+.ff-coverage-list {
+  background: var(--ff-white);
+  border: 1px solid var(--ff-gray-200);
+  border-radius: var(--ff-radius-lg);
+  padding: 32px;
+  box-shadow: var(--ff-shadow-sm);
+}
+.ff-coverage-list__title {
+  font-family: var(--ff-font-body);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ff-gold);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ff-gray-200);
+}
+.ff-coverage-list__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.ff-coverage-list h5 {
+  font-family: var(--ff-font-body);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--ff-navy);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.ff-coverage-list ul {
+  list-style: none;
+}
+.ff-coverage-list li {
+  padding: 6px 0 6px 18px;
+  font-size: .9rem;
+  color: var(--ff-gray-600);
+  position: relative;
+}
+.ff-coverage-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  background: var(--ff-gold);
+  border-radius: 50%;
+}
+.ff-coverage-list__courts {
+  padding-top: 20px;
+  border-top: 1px solid var(--ff-gray-200);
+}
+.ff-coverage-list__courts p {
+  font-size: .9rem;
+  color: var(--ff-gray-600);
+}
+
+.ff-two-col--areas {
+  align-items: start;
+}
+
+
+/* ============================================================
    CTA EXTRAS
    ============================================================ */
 
@@ -2057,6 +2220,9 @@ h4 { font-size: 1.15rem; font-weight: 600; }
   .ff-iframe-card__frame {
     height: 400px;
   }
+  .ff-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
@@ -2119,6 +2285,10 @@ h4 { font-size: 1.15rem; font-weight: 600; }
 
   /* Testimonials */
   .ff-testimonial-grid { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+
+  /* Why section */
+  .ff-why-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .ff-why-section { padding: 72px 0; }
 }
 
 
@@ -2221,6 +2391,7 @@ h4 { font-size: 1.15rem; font-weight: 600; }
   .ff-iframe-card__frame { height: 320px; }
   .ff-pa-card__list { grid-template-columns: 1fr; }
   .ff-card-grid { grid-template-columns: 1fr; }
+  .ff-coverage-list__grid { grid-template-columns: 1fr; }
 
   /* Stats */
   .ff-stats { gap: 24px; }
