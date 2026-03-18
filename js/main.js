@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  /* --- Enable scroll reveal animations (only after JS loads) --- */
+  document.documentElement.classList.add('ff-reveal-ready');
+
   /* --- Mobile Navigation Toggle --- */
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');

@@ -2629,11 +2629,17 @@ select.ff-form__input {
    SCROLL REVEAL ANIMATIONS
    ============================================================ */
 
+/* Default: everything visible. JS adds .ff-reveal-ready to <html>
+   to opt-in to the hidden→revealed animation. This prevents
+   invisible sections if JS fails or loads late. */
 .ff-reveal {
-  opacity: 0;
-  transform: translateY(28px);
   transition: opacity .7s ease, transform .7s ease;
 }
+html.ff-reveal-ready .ff-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+html.ff-reveal-ready .ff-reveal.ff-revealed,
 .ff-reveal.ff-revealed {
   opacity: 1;
   transform: translateY(0);
