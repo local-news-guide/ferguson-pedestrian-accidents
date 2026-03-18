@@ -152,6 +152,36 @@
     requestAnimationFrame(step);
   }
 
+  /* --- Iframe Fallback Detection --- */
+  document.querySelectorAll('.ff-iframe-card').forEach(function (card) {
+    var iframe = card.querySelector('iframe');
+    if (iframe) {
+      // Many sites set X-Frame-Options DENY — show fallback after timeout
+      var fallbackTimer = setTimeout(function () {
+        card.classList.add('ff-iframe-card--fallback');
+      }, 5000);
+
+      iframe.addEventListener('load', function () {
+        // If it loaded but is blank (blocked), show fallback
+        try {
+          // Cross-origin will throw — that's expected, means it loaded
+          var doc = iframe.contentDocument;
+          if (doc && doc.body && doc.body.innerHTML === '') {
+            card.classList.add('ff-iframe-card--fallback');
+          }
+        } catch (e) {
+          // Cross-origin = iframe loaded the site successfully
+          clearTimeout(fallbackTimer);
+        }
+      });
+
+      iframe.addEventListener('error', function () {
+        card.classList.add('ff-iframe-card--fallback');
+        clearTimeout(fallbackTimer);
+      });
+    }
+  });
+
   /* --- Active Nav Highlighting on Scroll --- */
   var sections = document.querySelectorAll('section[id]');
 
